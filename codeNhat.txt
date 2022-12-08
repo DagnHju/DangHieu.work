@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+#define ll long long
+const int Q=5e6+5;
+using namespace std;
+ll n;
+string s;
+map <ll,ll> mp;
+int main()
+{
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+    cin >> n;
+    for(int i=1;i<=n;i++)
+    {
+        cin >> s;
+        ll d=0;
+        if(s[0]=='-') s.erase(0,1);
+        for(int i=0;i<=s.size()-1;i++)
+        {
+            if(i%2==0)
+            {
+                if((s[i]-48)%2!=0) d++;
+            }
+            else if((s[i]-48)%2==0) d++;
+        }
+        if(d==s.size()) cout << "YES" << endl;
+        else cout << "NO" << endl;
+    }
+    return 0;
+}
